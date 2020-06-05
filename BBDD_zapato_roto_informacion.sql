@@ -1,6 +1,12 @@
 -- BBDD_zapato_roto
 -- Poblado de información de la base de datos
--- Creado en MySQL
+-- Creado en MySQL por Cristian Iñiguez
+
+-- Tabla `cliente`
+
+INSERT INTO cliente (nombre, ap_paterno, ap_materno, pais) VALUES ('Juan', 'Espinoza', 'Porcel', 'Bolivia');
+INSERT INTO cliente (nombre, ap_paterno, ap_materno, pais) VALUES ('Carlos', 'Balcazar', 'Rada', 'Chile');
+INSERT INTO cliente (nombre, ap_paterno, ap_materno, pais) VALUES ('Jessica', 'Gonzales', 'Barra', 'Peru');
 
 -- Tabla `producto`
 
@@ -18,6 +24,7 @@ INSERT INTO movimiento (tipo_movimiento, fecha) VALUES ('salida', '2020-09-08');
 INSERT INTO movimiento (tipo_movimiento, fecha) VALUES ('salida', '2020-12-06');
 INSERT INTO movimiento (tipo_movimiento, fecha) VALUES ('entrada', '2021-01-20');
 INSERT INTO movimiento (tipo_movimiento, fecha) VALUES ('salida', '2021-02-07');
+INSERT INTO movimiento (tipo_movimiento, fecha) VALUES ('salida', '2021-03-16');
 
 -- Tabla `mov_prod` (relaciona los movimientos de inventario con los productos)
 
@@ -40,14 +47,12 @@ INSERT INTO mov_prod (id_movimiento, id_producto, cantidad) VALUES (5, 4, 7);
 INSERT INTO mov_prod (id_movimiento, id_producto, cantidad) VALUES (5, 5, 8);
 INSERT INTO mov_prod (id_movimiento, id_producto, cantidad) VALUES (5, 6, 9);
 
--- Tabla `cliente`
-
-INSERT INTO cliente (nombre, ap_paterno, ap_materno, pais) VALUES ('Juan', 'Espinoza', 'Porcel', 'Bolivia');
-INSERT INTO cliente (nombre, ap_paterno, ap_materno, pais) VALUES ('Carlos', 'Balcazar', 'Rada', 'Chile');
-INSERT INTO cliente (nombre, ap_paterno, ap_materno, pais) VALUES ('Jessica', 'Gonzales', 'Barra', 'Peru');
+INSERT INTO mov_prod (id_movimiento, id_producto, cantidad) VALUES (6, 4, 12);
+INSERT INTO mov_prod (id_movimiento, id_producto, cantidad) VALUES (6, 6, 12);
 
 -- Tabla `factura` (facturación)
 
 INSERT INTO factura (id_cliente, id_movimiento, impuestos, descuento) VALUES (1, 2, 0.15, 0.10);
 INSERT INTO factura (id_cliente, id_movimiento, impuestos, descuento) VALUES (2, 3, 0.15, 0.00);
 INSERT INTO factura (id_cliente, id_movimiento, impuestos, descuento) VALUES (3, 5, 0.15, 0.20);
+INSERT INTO factura (id_cliente, id_movimiento, impuestos, descuento) VALUES (1, 6, 0.15, 0.15);
